@@ -1,0 +1,178 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  background-color: #eee; }
+
+img {
+  max-width: 100%; }
+
+a {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+
+@-webkit-keyframes scale-up {
+  0% {
+    -webkit-transform: translate(10%, 10%) scale(0);
+            transform: translate(10%, 10%) scale(0); }
+  80% {
+    -webkit-transform: translate(10%, 10%) scale(1.2);
+            transform: translate(10%, 10%) scale(1.2); }
+  100% {
+    -webkit-transform: translate(10%, 10%) scale(1);
+            transform: translate(10%, 10%) scale(1); } }
+
+@keyframes scale-up {
+  0% {
+    -webkit-transform: translate(10%, 10%) scale(0);
+            transform: translate(10%, 10%) scale(0); }
+  80% {
+    -webkit-transform: translate(10%, 10%) scale(1.2);
+            transform: translate(10%, 10%) scale(1.2); }
+  100% {
+    -webkit-transform: translate(10%, 10%) scale(1);
+            transform: translate(10%, 10%) scale(1); } }
+
+@-webkit-keyframes big-winner {
+  0% {
+    -webkit-transform: translate(10%, 10%) scale(1);
+            transform: translate(10%, 10%) scale(1); }
+  50% {
+    -webkit-transform: translate(10%, 10%) scale(1.1);
+            transform: translate(10%, 10%) scale(1.1); }
+  100% {
+    -webkit-transform: translate(10%, 10%) scale(1);
+            transform: translate(10%, 10%) scale(1); } }
+
+@keyframes big-winner {
+  0% {
+    -webkit-transform: translate(10%, 10%) scale(1);
+            transform: translate(10%, 10%) scale(1); }
+  50% {
+    -webkit-transform: translate(10%, 10%) scale(1.1);
+            transform: translate(10%, 10%) scale(1.1); }
+  100% {
+    -webkit-transform: translate(10%, 10%) scale(1);
+            transform: translate(10%, 10%) scale(1); } }
+
+body {
+  font-family: 'Lato', 'Arial', sans-serif; }
+
+#game {
+  width: 50%;
+  height: 0;
+  padding-bottom: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #ececec;
+  -webkit-box-shadow: 0 0 15px -6px #3e3e3e;
+          box-shadow: 0 0 15px -6px #3e3e3e; }
+  #game .game-board {
+    padding: 1.5rem; }
+    #game .game-board::after {
+      content: ' ';
+      display: table;
+      clear: both; }
+    #game .game-board__block {
+      position: relative;
+      width: 0;
+      height: 0;
+      background-color: rgba(255, 255, 255, 0.5);
+      float: left;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+      cursor: pointer; }
+      #game .game-board__block:hover {
+        background-color: rgba(255, 190, 6, 0.6); }
+    #game .game-board__piece--cross span {
+      width: 100%;
+      height: 30%;
+      background-color: #eb4a4a;
+      position: absolute;
+      -webkit-transform-origin: center center;
+              transform-origin: center center;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%) rotate(45deg);
+              transform: translate(-50%, -50%) rotate(45deg); }
+      #game .game-board__piece--cross span:not(:first-child) {
+        -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+                transform: translate(-50%, -50%) rotate(-45deg); }
+    #game .game-board__piece--circle {
+      border-radius: 50%;
+      background-color: #11526c; }
+      #game .game-board__piece--circle span {
+        position: absolute;
+        background-color: #fff;
+        border-radius: 50%;
+        width: 60%;
+        height: 60%;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%); }
+    #game .game-board div[class*="player"]:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+      cursor: default; }
+  #game div[class*="game-board__piece"] {
+    display: block;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    -webkit-transform: translate(10%, 10%);
+            transform: translate(10%, 10%);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-animation-name: scale-up;
+            animation-name: scale-up;
+    -webkit-animation-duration: .3s;
+            animation-duration: .3s;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out; }
+    #game div[class*="game-board__piece"] span {
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s; }
+  #game .u-winner div[class*="game-board__piece"] {
+    -webkit-animation-name: big-winner;
+            animation-name: big-winner;
+    -webkit-animation-duration: .8s;
+            animation-duration: .8s;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  #game .u-winner .game-board__piece--cross span,
+  #game .u-winner .game-board__piece--circle {
+    background-color: #ffbe06; }
+
+#game .game-button {
+  font-weight: 900;
+  font-size: 1.6rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #999;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  padding: .5rem 0; }
+  #game .game-button:hover {
+    color: #000;
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px); }
