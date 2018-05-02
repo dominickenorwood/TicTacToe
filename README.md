@@ -12,3 +12,5 @@
 <br>- Run "npm install" in command line
 <br>- Run "npm run start" to start servers on localhost:8080
 <br>- Run "npm run test" to initialize unit tests.</p>
+
+<p>6. Alternatively you can open "index.html" in the "dist" folder in your local browser.</p>

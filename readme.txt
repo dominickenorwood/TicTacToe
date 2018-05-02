@@ -12,3 +12,5 @@ TIC-TAC-TOE.
     - Run "npm install" in command line
     - Run "npm run start" to start servers on localhost:8080
     - Run "npm run test" to initialize unit tests.
+
+6. Alternatively you can open "index.html" in the "dist" folder in your local browser.
