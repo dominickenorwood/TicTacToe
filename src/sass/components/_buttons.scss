@@ -1,0 +1,19 @@
+#game {
+
+    .game-button {
+        font-weight: $font-weight-heavy;
+        font-size: 1.6rem;
+        text-align: center;
+        text-transform: uppercase;
+        color: $color-medium-grey;
+        margin-top: 1.5rem;
+        cursor: pointer;
+        transition: all .3s;
+        padding: .5rem 0;
+
+        &:hover {
+            color: $color-black;
+            transform: translate(-2px, -2px);
+        }
+    }
+}

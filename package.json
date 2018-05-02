@@ -1,0 +1,41 @@
+{
+  "name": "workflow-with-testing",
+  "version": "1.0.0",
+  "description": "This is a testing enviroment to fit in unit, assertion and UI testing.",
+  "main": "app.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "webpack-dev-server",
+    "build": "rimraf dist && webpack --config webpack.config.js --progress --profile --color",
+    "test": "jest --watchAll"
+  },
+  "author": "Dominick Norwood",
+  "license": "ISC",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^8.2.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-loader": "^2.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^22.4.3",
+    "node-sass": "^4.8.3",
+    "postcss-loader": "^2.1.3",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  }
+}

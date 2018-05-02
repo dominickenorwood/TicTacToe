@@ -1,0 +1,25 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: $default-browser-font-percentage;
+}
+
+body {
+  box-sizing: border-box;
+  position: relative;
+  background-color: $color-light-grey;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  transition: $default-transition;
+}

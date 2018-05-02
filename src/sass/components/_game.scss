@@ -1,0 +1,104 @@
+#game {
+    width: 50%;
+    height: 0;
+    padding-bottom: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-light-grey-2;
+    box-shadow: $box-shadow;
+
+    .game-board {
+        padding: 1.5rem;
+
+        @include clear-float;
+
+        &__block {
+            position: relative;
+            width: 0;
+            height: 0;
+            background-color: $transparent-white;
+            float: left;
+            transition: all .3s;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $transparent-gold;
+            }
+        }
+
+        &__piece {
+
+            &--cross {
+
+                span {
+                    width: 100%;
+                    height: 30%;
+                    background-color: $color-dull-red;
+                    position: absolute;
+                    transform-origin: center center;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) rotate(45deg);
+
+                    &:not(:first-child) {
+                        transform: translate(-50%, -50%) rotate(-45deg)
+                    }
+                }
+            }
+
+            &--circle {
+                border-radius: 50%;
+                background-color: $color-dark-blue;
+
+                span {
+                    position: absolute;
+                    background-color: $color-white;
+                    border-radius: 50%;
+                    width: 60%;
+                    height: 60%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+
+        div[class*="player"] {
+            
+            &:hover {
+                background-color: $transparent-white;
+                cursor: default;
+            }
+        }
+    }
+
+    div[class*="game-board__piece"] {
+        display: block;
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        transform: translate(10%, 10%);
+        transition: $default-transition;
+        
+        @include scale-up;
+
+        span {
+            transition: $default-transition;
+        }
+    }
+
+    .u-winner {
+
+        div[class*="game-board__piece"] {
+
+            @include big-winner;
+        }
+
+        .game-board__piece--cross span,
+        .game-board__piece--circle {
+            background-color: $color-gold;
+        }
+    }
+}

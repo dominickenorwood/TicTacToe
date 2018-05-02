@@ -1,0 +1,30 @@
+
+@mixin clear-float {
+    &::after {
+        content: ' ';
+        display: table;
+        clear:both;
+    }
+}
+
+@mixin max-width-query($breakpoint){
+    @media (max-width: (($breakpoint / $default-browser-font-size) * 1em)) { @content };
+}
+    
+@mixin min-width-query($breakpoint){
+    @media (min-width: (($breakpoint / $default-browser-font-size) * 1em)) { @content };
+}
+
+@mixin scale-up {
+    animation-name: scale-up;
+    animation-duration: .3s;
+    animation-timing-function: ease-out;
+}
+
+@mixin big-winner {
+    animation-name: big-winner;
+    animation-duration: .8s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
